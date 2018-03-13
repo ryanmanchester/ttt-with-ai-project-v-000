@@ -5,22 +5,12 @@ module Players
 
 #valid_moves = ["1", "2", "3", "4", "5", "6", "7", "8", "9"]
     def move(board)
-binding.pry
+#binding.pry
 
-      #   if !board.taken?("5")
-      #    "5"
-      #    binding.pry
-      #  elsif board.taken?("5") == token
-    # elsif board.taken?("5") && board.taken?("3")
-    #      "7"
-      #  elsif board.taken?("5") && board.taken?("7")
-      #    "3"
-      #  elsif board.taken?("5") && board.taken?("1")
-      #    "9"
+         if !board.taken?("5")
+          "5"
 
-      #  else
-      #    valid_moves.each {|move| board.valid_move?(move)}.sample
-      #end
+      end
     end
 
   def corner(board)
@@ -33,14 +23,8 @@ binding.pry
     valid_moves.each {|move| board.valid_move?(move)}.sample
   end
 
-  def block(board)
-binding.pry
-    valid_moves = [1, 2, 3, 4, 5, 6, 7, 8, 9]
-    valid_moves.detect do |move|
-      if !board.valid_move?(move)
-        board.valid_move?(move + 1)
-      end
-    end
+  def other_moves(board)
+    corner(board) || random(board)
   end
 
 
