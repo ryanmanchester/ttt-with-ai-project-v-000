@@ -7,6 +7,8 @@ module Players
     def move(board)
       binding.pry
 
+    end
+
   def corner(board)
     corners = [1, 5, 7, 9]
     corners.detect {|cell| board.valid_move?(cell)}
