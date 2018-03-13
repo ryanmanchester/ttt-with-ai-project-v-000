@@ -11,7 +11,7 @@ module Players
     end
 
   def corner(board)
-    corners = [1, 5, 7, 9]
+    corners = [1, 3, 7, 9]
     corners.detect {|cell| board.valid_move?(cell)}
   end
 
